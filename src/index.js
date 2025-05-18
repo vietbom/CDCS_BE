@@ -31,13 +31,9 @@ app.use('/api/docket', docketRouter)
 const __dirname = path.resolve()
 app.use(express.static(path.join(__dirname, 'public')))
 
-const port = process.env.PORT
-const host = process.env.HOST
+const port = process.env.PORT || 8017
+const host = process.env.HOST || 'localhost'
 
-const port = process.env.PORT || 8017;
-
-const port = process.env.PORT
-const host = process.env.HOST
 
 app.listen(port, '0.0.0.0', host, () => {
   console.log(`Server is running on http://${host}:${port}`)

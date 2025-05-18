@@ -34,7 +34,13 @@ app.use(express.static(path.join(__dirname, 'public')))
 const port = process.env.PORT
 const host = process.env.HOST
 
-app.listen(port, host, () =>{
-    console.log(`Server is running on http://${host}:${port}`)
-    connectDB()
+const port = process.env.PORT || 8017;
+
+const port = process.env.PORT
+const host = process.env.HOST
+
+app.listen(port, '0.0.0.0', host, () => {
+  console.log(`Server is running on http://${host}:${port}`)
+  connectDB()
 })
+
